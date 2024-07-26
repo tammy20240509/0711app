@@ -4,3 +4,160 @@ thead {
 tbody {
   background-color: #fcfffd;
 }
+
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: 
+    linear-gradient(140deg, 
+      #00f3ffA0, 
+      #0028b960 40%, 
+      #00f3ff60 60%, 
+      #00f3ffA0), 
+    url("https://i.gyazo.com/6936e2726513448a1a2a9e422744843d.jpg");
+  background-repeat: no-repeat;
+  background-position: 50%;
+  animation: move 20s infinite both;
+}
+
+@keyframes move{
+  0% {
+    background-size:100% auto;
+  }
+  50% {
+    background-size:140% auto;
+  }
+  100% {
+    background-size:100% auto;
+  }
+}
+/*ここから
+/*
+- 文字サイズ：22px
+- 背景色：#0bd
+- 文字色：白
+- ボタンの内側の余白：上下10px、左右20px
+- 角丸：5px
+- リンクテキストの下線を消去
+- ボタンを画面左右中央に表示
+*/
+body {
+  padding: 20px;
+  text-align: center;
+}
+
+.btn {
+  font-size: 22px;
+  background: #0bd;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+/* ボタンにカーソルを合わせると背景色を#0bbに変更 */
+.btn:hover {
+  background: #0bb;
+}
+
+/* 画面幅が400px以下になるとボタンの幅を画面いっぱいに表示 */
+@media (max-width: 400px){
+  .btn {
+    display: block;
+  }
+}
+/*ここからその２
+/* ===================================================
+共通 (クリックする前の見映え。モーダル拡大動作には無関係)
+=================================================== */
+
+body {
+  color: #fcfcfd;
+  font-family: Verdana, Verdana, Geneva, Tahoma, sans-serif;
+  line-height: 1.5;
+  letter-spacing: 0.08em;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+a {
+  text-decoration: none;
+  color: #fcfcfd;
+}
+
+a:hover {
+  opacity: 0.65;
+  color: #fcfcfd;
+}
+
+.container {
+  background-color: #fcfcfd;
+  width: 90%;
+  max-width: 980px;
+  margin: auto;
+}
+
+/* ===================================================
+course  （ここもクリック前の横並びに並べる見映だけ）
+=================================================== */
+.course {
+  background-color: #e3fcf3;
+}
+
+.course-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.course-item {
+  width: 30%;
+}
+
+.course-item img {
+  cursor: pointer;
+}
+.section {
+  padding: 60px;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* =====================================================
+コース画像拡大モーダル （ここから本PEN のコア）
+===================================================== */
+#grayDisplay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* コンテンツ全てに対して固定的に 1160pxとか指定されているときの対応で、
+  ダサいが!importantつける */
+  max-width: 100% !important;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+#grayDisplay img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 90%;
+  max-height: 90%;
+  height: 90%;
+  object-fit: contain;
+}
+.course-item img{
+    border-radius: 50%;
+}

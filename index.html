@@ -13,6 +13,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
   <title>Welcome to Vue</title>
 </head>
 <body>
@@ -33,7 +35,7 @@
         <tr>
           <td>
             <div class="form-group mb-0">
-              <label>選んでね</label>
+              <label>一覧から選択</label>
               <select v-model="framework" class="form-control">
                 <option value="700">ラブ & ピーチ フラペチーノ</option>
                 <option value="690">イチゴ バナナ フラペチーノ</option>
@@ -58,14 +60,40 @@
               </select>
             </div>
           </td>
-          <td>{{ framework }}</td>
+          <td>{{ framework }} <br /><a href="#" class="btn" onClick="audio()">→購入←</a> </td>
+<audio id="btn_audio">
+    <source src="https://www.freesound.org/data/previews/265/265115_4373976-lq.mp3" type="audio/mp3">
+</audio>
+</td>
         </tr>
       </tbody>
     </table>
   </div>
 </div>
+<!--ｌここから　-->
+<section class="course section" id="course">
+    <div class="container">
+      <h2 class="section-title">今人気のフラペチーノはこちら！</h2>
+      <div class="course-wrapper">
+        <div class="course-item">
+          <img src="https://i.gyazo.com/6936e2726513448a1a2a9e422744843d.jpg" alt="画像その１" class="course-item-img">
+          <p>ラブ & ピーチ フラペチーノ</p>
+        </div>
+        <div class="course-item">
+          <img src="https://i.gyazo.com/d44d99a96f76813ca9ad25dd79de982a.jpg" alt="画像その２" class="course-item-img">
+          <p>イチゴ バナナ フラペチーノ</p>
+        </div>
+        <div class="course-item">
+          <img src="https://i.gyazo.com/6e24fa4f1f98bc14c781178a7bdbed4c.jpg" alt="画像その３" class="course-item-img">
+          <p>スターバックス ストロベリー フラペチーノ</p>
+        </div>
+      </div>
+    </div>
 
+    <!-- コース画像のモーダル時のグレー背景 -->
+    <div id="grayDisplay"></div>
 
+  </section>
 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
